@@ -76,7 +76,7 @@ def generate_keywords(base_keyword: str, categories: dict) -> list:
 # Main function
 def main():
     st.title("Easy Ranking Keywords Research Tool")
-    base_keyword = st.text_input("Enter the keyword: (Use 1-2 words for best results)", "")  # Prompting user for keyword
+    base_keyword = st.text_input("Enter keyword: (Use 1-2 words for best results)", "")  # Prompting user for keyword
     if st.button("Find Easy Keywords"):
         if base_keyword:
             categories = {
@@ -123,7 +123,7 @@ def main():
 
             for keyword in keywords:
                 result_count = get_search_results_count(keyword)
-                if result_count is not None and result_count <= 350000 and not keyword[0].isdigit():
+                if result_count is not None and result_count <= 700000 and not keyword[0].isdigit():
                     easy_keywords_found = True
                     st.write(keyword)
 
